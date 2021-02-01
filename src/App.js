@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import React, {Component} from 'react'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Redirect } from 'react-router';
+
+const styles = {
+}
+
+class App extends Component
+{
+  signUpRedirect() {
+    return <Redirect to="/signup"></Redirect>
+  }
+  render() {
+    return (
+      <div className='App' style={styles.div}>
+        {
+          // <a onClick={this.signUpRedirect}>Sign Up</a>
+          <a href="/signup"><h1>Sign Up</h1></a>
+        }
+      </div>
+    );
+  }
 }
 
 export default App;
